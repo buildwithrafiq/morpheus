@@ -106,6 +106,9 @@ function createMockGemini(): IGeminiService {
     generateUI: vi.fn().mockImplementation(() =>
       fakeStream({ type: "code", content: "ui code..." }, { type: "result", content: ui })
     ),
+    executeAgent: vi.fn().mockImplementation(() =>
+      fakeStream({ type: "result", content: "executed" })
+    ),
   };
 }
 

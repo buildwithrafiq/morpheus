@@ -234,6 +234,7 @@ describe("AgentArchitect", () => {
       ),
       generateCode: vi.fn(),
       generateUI: vi.fn(),
+      executeAgent: vi.fn(),
     };
   }
 
@@ -273,6 +274,7 @@ describe("AgentArchitect", () => {
       ),
       generateCode: vi.fn(),
       generateUI: vi.fn(),
+      executeAgent: vi.fn(),
     };
     const architect = new AgentArchitect(gemini, createMockValidator());
     const chunks = await collectChunks(architect.design(makeSpec()));

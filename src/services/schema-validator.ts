@@ -24,14 +24,14 @@ function validate<T>(schema: ZodSchema<T>, data: unknown): ValidationResult<T> {
 
 export class SchemaValidator implements ISchemaValidator {
   validateAgentSpec(data: unknown): ValidationResult<AgentSpec> {
-    return validate(AgentSpecSchema, data);
+    return validate(AgentSpecSchema, data) as ValidationResult<AgentSpec>;
   }
 
   validateArchitectureDoc(data: unknown): ValidationResult<ArchitectureDoc> {
-    return validate(ArchitectureDocSchema, data);
+    return validate(ArchitectureDocSchema, data) as ValidationResult<ArchitectureDoc>;
   }
 
   validateDeploymentResult(data: unknown): ValidationResult<DeploymentResult> {
-    return validate(DeploymentResultSchema, data);
+    return validate(DeploymentResultSchema, data) as ValidationResult<DeploymentResult>;
   }
 }
